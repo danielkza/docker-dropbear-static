@@ -9,10 +9,10 @@ Dropbear is a relatively small SSH server and client. It runs on a variety of PO
 
 ```bash
 # Run SSH client
-docker run -it danielkza/dropbear-static ssh my-host
+docker run -it quay.io/danielkza/dropbear-static ssh my-host
 
 # Run SSH server
-docker run -p 2022:22 dropbear-static
+docker run -p 2022:22 quay.io/danielkza/dropbear-static
 ```
 
 ## Incorporating in builds
@@ -20,7 +20,7 @@ docker run -p 2022:22 dropbear-static
 Since the Dropbear executables are self-contained, they can be copied to other images at will.
 
 ```Dockerfile
-FROM danielkza/dropbear-static AS dropbear
+FROM quay.io/danielkza/dropbear-static AS dropbear
 
 FROM debian:stretch
 
